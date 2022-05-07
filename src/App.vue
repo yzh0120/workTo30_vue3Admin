@@ -1,14 +1,14 @@
 <template>
-  <router-view v-slot="{ Component }">
+  <!-- <router-view v-slot="{ Component }">
     <transition name="forward" mode="out-in">
-      <!-- Transition包裹的必须是一个单根的组件 -->
       <div :key="$route.path">
-        <keep-alive ref="keepAliveContainer1">
+        <keep-alive ref="keepAliveContainer">
           <component :is="Component" />
         </keep-alive>
       </div>
     </transition>
-  </router-view>
+  </router-view> -->
+  <router-view></router-view>
 </template>
 
 <script>
@@ -28,7 +28,7 @@ export default {
     let { proxy } = getCurrentInstance();
     const keepAliveContainer = ref(null); // 通过 ref 绑定子组件
     onMounted(() => {
-      console.log(proxy.$refs.keepAliveContainer1, "proxy.$refs.keepAlive");
+      // console.log(keepAliveContainer.value._.__v_cache, "缓存");
     });
     return {
       keepAliveContainer,
