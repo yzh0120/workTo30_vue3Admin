@@ -2,6 +2,7 @@
   首页
   <div @click="demo">{{ one }}个vue3</div>
   <div>year:{{ year }}{{ propsDemo }}</div>
+  <com ref="com"></com>
 </template>
 
 <script>
@@ -13,6 +14,7 @@ import {
   reactive,
   toRefs,
 } from "vue";
+import com from "./com.vue";
 export default {
   props: {
     propsDemo: {
@@ -38,9 +40,7 @@ export default {
       }),
     });
     let methods = {
-      demo() {
-        console.log("demo");
-      },
+      demo() {},
     };
     //监听
     watch(
@@ -56,7 +56,7 @@ export default {
     console.log("props:", props);
     console.log("proxy:", proxy);
     onMounted(() => {
-      console.log("挂载");
+      console.log("com:", proxy.$refs.com);
       setTimeout(() => {
         data.one = "改变";
       }, 1000);
@@ -66,6 +66,9 @@ export default {
       ...toRefs(data),
       ...methods,
     };
+  },
+  components: {
+    com,
   },
 };
 </script>

@@ -3,7 +3,7 @@
     <transition name="forward" mode="out-in">
       <!-- Transition包裹的必须是一个单根的组件 -->
       <div :key="$route.path">
-        <keep-alive ref="keepAlive">
+        <keep-alive ref="keepAliveContainer1">
           <component :is="Component" />
         </keep-alive>
       </div>
@@ -19,15 +19,20 @@ import {
   getCurrentInstance,
   reactive,
   toRefs,
+  ref,
 } from "vue";
 export default {
   name: "App",
 
   setup(props) {
     let { proxy } = getCurrentInstance();
+    const keepAliveContainer = ref(null); // 通过 ref 绑定子组件
     onMounted(() => {
-      console.log(proxy.$refs.keepAlive, "proxy.$refs.keepAlive");
+      console.log(proxy.$refs.keepAliveContainer1, "proxy.$refs.keepAlive");
     });
+    return {
+      keepAliveContainer,
+    };
   },
   components: {
     // HelloWorld,
