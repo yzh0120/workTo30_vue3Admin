@@ -2,6 +2,10 @@ const path = require('path')
 // vite.config.js # or vite.config.ts
 
 module.exports = {
+  // publicPath: '/',
+  publicPath: "/",
+  outputDir: 'dist',
+  assetsDir: 'static',
   cssPreprocessOptions: {
     scss: {
       additionalData: '@import "./src/assets/scss/global.scss";'

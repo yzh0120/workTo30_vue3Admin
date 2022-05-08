@@ -1,0 +1,7 @@
+1.安装本地访问服务插件serve
+
+npm install -g serve
+
+2.在dist文件夹里，运行
+
+npm run serve

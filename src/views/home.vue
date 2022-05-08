@@ -57,26 +57,27 @@ export default {
     let methods = {
       demo() {
         let cache = keepAliveContainer.value._.__v_cache;
+        console.log(keepAliveContainer.value._);
 
-        if (cache.get("/aa")) {
-          //cache.get("/aa").component.proxy                                    相当于setup中的proxy,那能看到vue2式的选项式声明(method )和setup返回的参数
-          //cache.get("/aa").component.vnode                                    是虚拟节点
-          //cache.get("/aa").type                                               是整个vue组件的export default {}对象
+        // if (cache.get("/aa")) {
+        //   //cache.get("/aa").component.proxy                                    相当于setup中的proxy,那能看到vue2式的选项式声明(method )和setup返回的参数
+        //   //cache.get("/aa").component.vnode                                    是虚拟节点
+        //   //cache.get("/aa").type                                               是整个vue组件的export default {}对象
 
-          /////////////////////////////////////
-          //  cache.get("/aa").props.onVnodeUnmounted或者cache.get("/aa").component.vnode.props.onVnodeUnmounted
-          /////////////////////////////////////
-          cache.delete("/aa");
-          //删除map中的key;
-          // console.log("存在");
-          // cache
-          //   .get("/aa")
-          //   .component.vnode.props.onVnodeUnmounted(
-          //     cache.get("/aa").component.vnode
-          //   );
-        }
+        //   /////////////////////////////////////
+        //   //  cache.get("/aa").props.onVnodeUnmounted或者cache.get("/aa").component.vnode.props.onVnodeUnmounted
+        //   /////////////////////////////////////
+        //   cache.delete("/aa");
+        //   //删除map中的key;
+        //   // console.log("存在");
+        //   // cache
+        //   //   .get("/aa")
+        //   //   .component.vnode.props.onVnodeUnmounted(
+        //   //     cache.get("/aa").component.vnode
+        //   //   );
+        // }
 
-        console.log(cache.get("/aa"), "缓存"); //
+        // console.log(cache.get("/aa"), "缓存"); //
 
         //
       },
