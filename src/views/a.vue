@@ -5,7 +5,13 @@
 <script>
 export default {
   setup() {
-    return {};
+    return {
+      a: "a",
+      fna1() {},
+    };
+  },
+  methods: {
+    fna() {},
   },
 };
 </script>

@@ -5,7 +5,9 @@
 <script>
 export default {
   setup() {
-    return {};
+    return {
+      b: "b",
+    };
   },
 };
 </script>
