@@ -66,13 +66,14 @@ export default {
           /////////////////////////////////////
           //  cache.get("/aa").props.onVnodeUnmounted或者cache.get("/aa").component.vnode.props.onVnodeUnmounted
           /////////////////////////////////////
-          // cache.delete("/aa");   删除map中的key
+          cache.delete("/aa");
+          //删除map中的key;
           // console.log("存在");
-          cache
-            .get("/aa")
-            .component.vnode.props.onVnodeUnmounted(
-              cache.get("/aa").component.vnode
-            );
+          // cache
+          //   .get("/aa")
+          //   .component.vnode.props.onVnodeUnmounted(
+          //     cache.get("/aa").component.vnode
+          //   );
         }
 
         console.log(cache.get("/aa"), "缓存"); //
